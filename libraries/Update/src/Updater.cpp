@@ -226,10 +226,6 @@ bool UpdateClass::_writeBuffer(){
 
 bool UpdateClass::_verifyHeader(uint8_t data) {
     if(_command == U_FLASH) {
-        if(data != ESP_IMAGE_HEADER_MAGIC) {
-            _abort(UPDATE_ERROR_MAGIC_BYTE);
-            return false;
-        }
         return true;
     } else if(_command == U_SPIFFS) {
         return true;
